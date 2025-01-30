@@ -11,9 +11,6 @@ public class Property {
     int numHouses;
     int houseCost;
     int propertyValue;
-    boolean mortgaged;
-    int mortgagePay;
-    int mortgageBuy;
     boolean ownable;
     public Property(Color c, String n,boolean buyable, int rate, int cost, int hCost){
         color = c;
