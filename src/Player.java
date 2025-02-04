@@ -1,6 +1,6 @@
 
 import java.util.ArrayList;
-
+import java.lang.Math;
 public class Player {
     private String name;
     private int money;
@@ -51,6 +51,18 @@ public class Player {
     //TODO FIX
     //Go is the top left corner, location 0. Locations increase by 1 for each property that the player passes clockwise.
     public int getLocation(){
+        if (location > 39) {
+            location -= 40;
+            System.out.println("Congrats you passed go and collected 200 dollars!");
+            money += 200;
+        }
         return location;
+    }
+    public void rolling(){
+        int roll1 = (int)(Math.random() * 6) +1;    
+        int roll2 = (int) (Math.random()  * 6) + 1;   
+        location += roll1 + roll2;
+        Display.inform("You have moved " + (roll1 + roll2) + " spaces!");
+        Display.boardPanel.repaint();
     }
 }

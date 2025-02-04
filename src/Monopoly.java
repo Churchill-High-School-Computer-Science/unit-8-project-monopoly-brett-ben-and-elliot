@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 import javax.swing.SwingUtilities;
 
 public class Monopoly {
@@ -9,6 +11,16 @@ public class Monopoly {
         Display.players.add(c);
         //Graphics!
         SwingUtilities.invokeLater(() -> Display.setupFrame());
+        ArrayList<Player> players = new ArrayList<Player>();
+        players.add(a);
+        players.add(c);
+        boolean win = false;
+        for (int i = 0; i<10; i++){    
+            for (Player play: players){
+                play.rolling();
+                play.getLocation();
+            }
 
-    }
+        }
+        }
 }
