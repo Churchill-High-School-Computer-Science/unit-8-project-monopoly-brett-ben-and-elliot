@@ -12,6 +12,7 @@ public class Property {
     int houseCost;
     int propertyValue;
     boolean ownable;
+    boolean purchased;
     public Property(Color c, String n,boolean buyable, int rate, int cost, int hCost){
         color = c;
         name = n;
@@ -21,12 +22,16 @@ public class Property {
         propertyValue = cost;
         ownable = buyable;
         houseCost = hCost;
+        purchased = false;
     }
     public int getHCost(){
         return houseCost;
     }
     public boolean getOwnable(){
         return ownable;
+    }
+    public boolean getPurchased(){
+        return purchased;
     }
     public int getValue(){
         return propertyValue;
@@ -53,5 +58,11 @@ public class Property {
     //TODO fix
     public int getRent(){
         return rent;
+    }
+
+    public void bought(String a){
+        ownable =false;
+        purchased = true;
+        owner = a;
     }
 }

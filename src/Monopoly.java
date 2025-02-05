@@ -15,10 +15,20 @@ public class Monopoly {
         players.add(a);
         players.add(c);
         boolean win = false;
-        for (int i = 0; i<10; i++){    
+        for (int i = 0; i<40; i++){    
             for (Player play: players){
                 play.rolling();
-                play.getLocation();
+                if (Board.propertiesMap.get(play.getLocation()).getOwnable() && !Board.propertiesMap.get(play.getLocation()).getPurchased()){
+                    String[] choose = {"yes","no"};
+                    if(Display.choice("Buy Property?", "Would you like to purchase this property?", choose) == 0){
+                        play.addProperty(Board.propertiesMap.get(play.getLocation()));
+                    }
+                }
+                else{
+                    if(Board.propertiesMap.get(play.getLocation()).getPurchased()){
+                        play.payRent(Board.propertiesMap.get(play.getLocation()));
+                    }
+                }
             }
 
         }
