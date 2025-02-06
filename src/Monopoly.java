@@ -25,7 +25,7 @@ public class Monopoly {
                     }
                 }
                 else{
-                    if(Board.propertiesMap.get(play.getLocation()).getPurchased()){
+                    if(Board.propertiesMap.get(play.getLocation()).getPurchased()&&!Board.propertiesMap.get(play.getLocation()).getOwner().equals(play.getName())){
                         play.payRent(Board.propertiesMap.get(play.getLocation()));
                     }
                 }
