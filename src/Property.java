@@ -4,15 +4,15 @@ import java.awt.Color;
 public class Property {
     
     //TODO fix
-    Color color;
-    String name;
-    String owner;
-    int rent;
-    int numHouses;
-    int houseCost;
-    int propertyValue;
-    boolean ownable;
-    boolean purchased;
+    private Color color;
+    private String name;
+    private String owner;
+    private int rent;
+    private int numHouses;
+    private int houseCost;
+    private int propertyValue;
+    private boolean ownable;
+    private boolean purchased;
     public Property(Color c, String n,boolean buyable, int rate, int cost, int hCost){
         color = c;
         name = n;
@@ -39,27 +39,24 @@ public class Property {
     public Color getColor(){
         return color;
     }
-
-    //TODO fix
     public String getName(){
         return name;
     }
-
-    //TODO fix
     public int getNumHouses(){
         return numHouses;
     }
-
-    //TODO fix
     public String getOwner(){
         return owner;
     }
-
-    //TODO fix
     public int getRent(){
         return rent;
     }
-
+    public void setRent(int a){
+        rent = a;
+    }
+    public void setOwner(String a){
+        owner = a;
+    }
     public void bought(String a){
         ownable =false;
         purchased = true;
