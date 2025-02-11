@@ -24,6 +24,12 @@ public class Monopoly {
                         play.addProperty(Board.propertiesMap.get(play.getLocation()));
                     }
                 }
+                else if(Board.propertiesMap.get(play.getLocation()).getName().equals("CHANCE")){
+                    play.Chance();
+                }
+                else if(Board.propertiesMap.get(play.getLocation()).getName().equals("Community Chest")){
+                    play.CommunityChest();
+                }
                 else{
                     if(Board.propertiesMap.get(play.getLocation()).getPurchased()&&!Board.propertiesMap.get(play.getLocation()).getOwner().equals(play.getName())){
                         play.payRent(Board.propertiesMap.get(play.getLocation()));

@@ -185,4 +185,64 @@ public class Player {
         }
         Display.boardPanel.repaint();
     }
+    public void Chance(){
+        int numbers = (int)(Math.random() * 7);
+        String list[] = {"Collect $200" , "Advance to nearest Utility", "Buy a present, Pay $75", "Bank pays you dividend, receive $50", "Go back 3 Spaces", "Go to Jail", "Pay poor tax, $15" };
+        Display.inform(list[numbers]);
+        if (numbers == 0){
+            money += 200;
+        }
+        else if (numbers == 1){
+            if (location > 12 || location < 28){
+                location = 28;
+            }
+            else if (location > 28 || location < 12){
+                location = 12;
+            }
+        }
+        else if (numbers == 2){
+            money -= 75;
+        }
+        else if (numbers == 3){
+            money += 50;
+        }
+        if (numbers == 4){
+            location -= 3;
+        }
+        if (numbers == 5){
+            location = 10;
+        }
+        if (numbers == 6){
+            money -= 15;
+        }
+    }
+
+    public void CommunityChest(){
+        int numbers = (int) (Math.random() * 6) + 1;
+        if (numbers == 1){
+            money +=200;
+            Display.inform("Bank error in your favor. Collect $200");
+        }
+        else if (numbers == 2){
+            money-=50;
+            Display.inform("Doctor's fee. Pay $50");
+        }
+        else if (numbers == 3){
+            money+=20;
+            Display.inform("Income tax refund. Collect $20");
+        }
+        else if (numbers == 4){
+            money-=50;
+            Display.inform("Pay school fees of $50");
+        }
+        else if (numbers == 5){
+            money+=100;
+            Display.inform("Life insurance matures. Collect $100");
+        }
+        else{
+            money+=200;
+            location = 0;
+            Display.inform("Advance to Go");
+        }
+    }
 }
