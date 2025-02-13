@@ -85,7 +85,7 @@ public class Player {
                         Display.inform("You paid " + space.getOwner() + " " + cost + " dollars.");
                         for(int p =0; i < Display.players.size(); p++){
                             if(Display.players.get(p).getName().equals(space.getOwner())){
-                                Display.players.get(p).addMoney(cost);
+                                Display.players.get(p).addMoney(cost); 
                             }
                          }
                     }
